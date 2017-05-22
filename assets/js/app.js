@@ -110,7 +110,7 @@ function dollar(value) {
 
 function getUberTimeEstimate(geoObj) {
      return new Promise(function(resolve, reject) {
-        var uber_token = "9msHLJgzyV3QzWOyuTGYu6dysBnyKw7Oo7dMHSBw";
+        var uber_token = "LUyZWs-Mfjzpy8b1VK_uO1sZiiawpvx1VA0tv2Qr";
         axios({
                 method: 'GET',
                 url: "https://api.uber.com/v1.2/estimates/price?start_latitude=" + geoObj.start.lat + "&start_longitude=" + geoObj.start.lng + "&end_latitude=" + geoObj.end.lat + "&end_longitude=" + geoObj.end.lng,
@@ -212,8 +212,7 @@ function initMap(geoObj) {
                         geocoder.geocode({ 'address': destinationList[j] },
                             showGeocodedAddressOnMap(true));
 
-                        outputDiv.innerHTML += 
-                       'Fare: ' + results[j].fare.text + '<br>' + 'Duration: ' + results[j].duration.text;
+                        outputDiv.innerHTML += '<br>' + 'Fare: ' + results[j].fare.text + '<br>' + 'Duration: ' + results[j].duration.text;
                         console.log(results);
                     }
                 }
